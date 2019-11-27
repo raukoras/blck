@@ -1,0 +1,38 @@
+## La blockchain est composée de Block
+## Chaque Block comprend un index, le hash du bloc précédent, la Transaction effectuée, la preuve de travail, et un timestamp
+Block(
+                        SERIAL index PRIMARY KEY,
+                        int previous_hash,
+                        int proof,
+                        timestamp timestamp
+)
+
+## La transaction est le coeur de la blockchain.
+## Elle contient deux User (expéditeur, récipiendaire), la signature de la transaction, et un Payload
+## /!\ index doit correspondre à index de la table blck
+Transaction(
+                       SERIAL index REFERENCES blck
+                       int8 uuid_sender,
+                       int8 uuid_recipient,
+                       int signature,
+                       SERIAL index_payload
+                       PRIMARY KEY (index, index_payload)
+            )
+
+User(
+                        int8 uuid,
+                        text user_name
+                        Wallet ptf
+)
+
+## La Payload contient la référence vers le contenu.
+## Elle est définie suivant un type, et un index qui indique la ligne à charger
+## Les différents types :
+## 1/ Transaction monétaire
+##      numeric amount
+Payload(
+                        SERIAL index_payload REFERENCES transaction
+                        int type
+                        numeric amount
+)
+
