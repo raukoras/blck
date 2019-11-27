@@ -17,7 +17,7 @@ setup(
   #      'psycopg2' ,
   #      'libgcc_mutex',
   #      'asn1crypto','ca-certificates','certifi','cffi','chardet','click','cryptography','idna','itsdangerous','jinja2','krb5','libedit','libffi','libgcc-ng','libpq','libstdcxx-ng','markupsafe','ncurses','openssl','pip','pycparser','pycrypto','pyopenssl','pysocks','python','readline','requests','setuptools','six','sqlite','tk','urllib3','werkzeug','wheel','xz','zlib' 
-    ],
+  #  ],
   classifiers=[
     'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
     'Intended Audience :: Developers',      # Define that your audience are developers
